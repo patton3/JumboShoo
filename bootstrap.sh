@@ -33,9 +33,9 @@ echo ""
 echo "Select node type to install:"
 select CHOICE in "Camera node" "Geophone node" "Brain node" "Quit"; do
   case $CHOICE in
-    "Camera node")  sudo bash install_camera.sh   ; break ;;
-    "Geophone node")sudo bash install_geophone.sh ; break ;;
-    "Brain node")   sudo bash install_brain.sh    ; break ;;
+    "Camera node")   sudo bash install_camera.sh   ; break ;;
+    "Geophone node") sudo bash install_geophone.sh ; break ;;
+    "Brain node")    sudo bash install_brain.sh    ; break ;;
     "Quit")         exit 0 ;;
   esac
 done
