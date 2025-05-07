@@ -33,5 +33,7 @@ wget -q --show-progress https://github.com/ultralytics/assets/releases/download/
      -O "$MODEL_DIR/Elephants2x.pt"
 
 echo "XLarge Model saved to $MODEL_DIR/Elephants2x.pt"
+# 5. Set Wallpaper
+pcmanfm --set-wallpaper $BASE/backgrounds/CamBackground.png
 
 echo "Camera node installed. Reboot to test, or run: sudo systemctl status lora_cam_bridge"
