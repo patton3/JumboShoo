@@ -3,7 +3,7 @@
 Description = Reboot every 6 hours
 
 [Timer]
-OnBootSec = 20min
+OnBootSec = 6h
 OnUnitActiveSec = 6h
 AccuracySec = 10min
 
