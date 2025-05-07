@@ -5,8 +5,11 @@ After = multi-user.target
 
 [Service]
 ExecStart = /home/a/JumboShoo/venv/bin/python /home/a/JumboShoo/scripts/lora_cam_bridge.py
-WorkingDirectory = /home/a/JumboShoo
+WorkingDirectory = /home/a/JumboShoo/scripts
 User = a
+StandardOutput = journal+console
+StandardError = inherit
+TTYPath = /dev/tty1
 Restart = on-failure
 RestartSec = 5
 
