@@ -27,7 +27,7 @@ sudo cp "$NEW_CFG" "$BOOT_CFG"
 echo "/boot/config.txt updated — reboot required for SPI/I2C to take effect."
 
 # Step 3: Run install selector
-cd "$DEST/installers"
+cd "$DEST/Installers"
 
 echo ""
 echo "Select node type to install:"
