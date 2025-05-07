@@ -4,5 +4,5 @@ Description = Send LoRa STATUS ping
 
 [Service]
 Type = oneshot
-ExecStart = /home/a/Jumboshoo/venv/bin/python /home/a/Jumboshoo/status_ping.py
+ExecStart = /home/a/JumboShoo/venv/bin/python /home/a/JumboShoo/scripts/status_ping.py
 User = a
