@@ -4,8 +4,8 @@ Description = LoRa-triggered elephant camera
 After = multi-user.target
 
 [Service]
-ExecStart = /home/a/Jumboshoo/venv/bin/python /home/a/Jumboshoo/lora_cam_bridge.py
-WorkingDirectory = /home/a/Jumboshoo
+ExecStart = /home/a/JumboShoo/venv/bin/python /home/a/JumboShoo/scripts/lora_cam_bridge.py
+WorkingDirectory = /home/a/JumboShoo
 User = a
 Restart = on-failure
 RestartSec = 5
