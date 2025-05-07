@@ -1,0 +1,11 @@
+
+[Unit]
+Description = Reboot every 6 hours
+
+[Timer]
+OnBootSec = 20min
+OnUnitActiveSec = 6h
+AccuracySec = 10min
+
+[Install]
+WantedBy = timers.target

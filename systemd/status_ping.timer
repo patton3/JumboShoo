@@ -1,0 +1,10 @@
+
+[Unit]
+Description = Repeat STATUS ping every hour - 2 minutes during testing
+
+[Timer]
+OnBootSec = 5min
+OnUnitActiveSec = 2min
+
+[Install]
+WantedBy = timers.target
