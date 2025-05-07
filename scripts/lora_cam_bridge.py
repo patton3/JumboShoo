@@ -31,7 +31,7 @@ from ultralytics import YOLO
 
 # ─────────────── defaults (modify with CLI) ───────────────
 DEF_SAVE_DIR     = "/home/a/JumboShoo/logging/ElephantHits"
-DEF_MODEL_PATH   = "/home/a/JumboShoo/scripts/models/Elephants2m.pt"        # Elephants2n/s/m/l/x
+DEF_MODEL_PATH   = "/home/a/JumboShoo/scripts/models/Elephants2x.pt"        # Elephants2n/s/m/l/x
 DEF_CONF         = 0.50                    # Confidence threshold for elephant detection
 DEF_WIDTH        = 1280                    # Image Width
 DEF_HEIGHT       = 720                     # Image Height
