@@ -11,7 +11,7 @@ MODEL_DIR="$BASE/scripts/models"
 if [ ! -d "$BASE/venv" ]; then
   python3 -m venv --system-site-packages "$BASE/venv"
   "$BASE/venv/bin/pip" install --no-cache-dir \
-       ultralytics picamera2 opencv-python adafruit-circuitpython-rfm9x adafruit-blinka numpy
+       ultralytics picamera2 opencv-python adafruit-circuitpython-rfm9x adafruit-blinka
 fi
 
 # 2. copy systemd units
