@@ -15,9 +15,9 @@ echo "=== JShoo Pi bootstrap ==="
 # Step 1: Clone or update repo
 echo "Cloning (or updating) repo to $DEST ..."
 if [ -d "$DEST/.git" ]; then
-  sudo -u pi git -C "$DEST" pull
+  sudo -u a git -C "$DEST" pull
 else
-  sudo -u pi git clone "$REPO" "$DEST"
+  sudo -u a git clone "$REPO" "$DEST"
 fi
 
 # Step 2: Replace /boot/config.txt with version from repo
