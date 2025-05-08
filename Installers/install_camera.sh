@@ -28,12 +28,24 @@ systemctl enable --now status_ping.timer
 systemctl enable --now reboot.timer
 
 # 4. Download yolo11x.pt
-
 wget -q --show-progress https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11x.pt \
      -O "$MODEL_DIR/Elephants2x.pt"
+echo "✓ XLarge Model saved to $MODEL_DIR/Elephants2x.pt"
 
-echo "XLarge Model saved to $MODEL_DIR/Elephants2x.pt"
-# 5. Set Wallpaper
-pcmanfm --set-wallpaper $BASE/backgrounds/CamBackground.png
+# 5. Set wallpaper
+pcmanfm --set-wallpaper "$BASE/backgrounds/CamBackground.png"
+
+# 6. Fix gpiomem access for non-root (RPi camera RuntimeError workaround)
+UDEV_RULE="/etc/udev/rules.d/99-com.rules"
+FIX_LINE='KERNEL=="gpiomem", OWNER="root", GROUP="dialout"'
+
+echo "Applying gpiomem fix for RPi compatibility..."
+if ! grep -Fxq "$FIX_LINE" "$UDEV_RULE"; then
+  echo "$FIX_LINE" | tee -a "$UDEV_RULE" > /dev/null
+  udevadm control --reload-rules && udevadm trigger
+  echo "✓ udev rule added to $UDEV_RULE"
+else
+  echo "✓ gpiomem rule already present"
+fi
 
 echo "Camera node installed. Reboot to test, or run: sudo systemctl status lora_cam_bridge"
