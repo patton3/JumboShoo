@@ -9,7 +9,6 @@ WorkingDirectory = /home/a/JumboShoo/scripts
 User = a
 StandardOutput = journal+console
 StandardError = inherit
-TTYPath = /dev/tty1
 Restart = on-failure
 RestartSec = 5
 
