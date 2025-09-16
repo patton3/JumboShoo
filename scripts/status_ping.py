@@ -14,3 +14,8 @@ def send_ping():
     
 if __name__ == "__main__":
     send_ping()
+    #Not Active without the boot service that's commented out in the installer. The purpose of those is to have the script
+    #running in the background, Spring 2025 I mistakenly tried to have this and the main (camera/brain/whatever)
+    #active and initialized at the same time, which led to errors due to the rfm9x radio being in use by one
+    #or the other script at any time. Ideally this is integrated into the main script rather than as a seperate program
+    #and seperate service.
