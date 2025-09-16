@@ -15,17 +15,17 @@ if [ ! -d "$BASE/venv" ]; then
 fi
 
 # 2. copy systemd units
-install -m 644 "$SRC/systemd/lora_cam_bridge.service" "$UNITDIR/"
-install -m 644 "$SRC/systemd/status_ping.service"     "$UNITDIR/"
-install -m 644 "$SRC/systemd/status_ping.timer"       "$UNITDIR/"
-install -m 644 "$SRC/systemd/reboot.service"          "$UNITDIR/"
-install -m 644 "$SRC/systemd/reboot.timer"            "$UNITDIR/"
+#install -m 644 "$SRC/systemd/lora_cam_bridge.service" "$UNITDIR/"
+#install -m 644 "$SRC/systemd/status_ping.service"     "$UNITDIR/"
+#install -m 644 "$SRC/systemd/status_ping.timer"       "$UNITDIR/"
+#install -m 644 "$SRC/systemd/reboot.service"          "$UNITDIR/"
+#install -m 644 "$SRC/systemd/reboot.timer"            "$UNITDIR/"
 
 # 3. reload + enable
-systemctl daemon-reload
-systemctl enable --now lora_cam_bridge.service
-systemctl enable --now status_ping.timer
-systemctl enable --now reboot.timer
+#systemctl daemon-reload
+#systemctl enable --now lora_cam_bridge.service
+#systemctl enable --now status_ping.timer
+#systemctl enable --now reboot.timer
 
 # 4. Download yolo11x.pt
 wget -q --show-progress https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11x.pt \
@@ -33,9 +33,9 @@ wget -q --show-progress https://github.com/ultralytics/assets/releases/download/
 echo "✓ XLarge Model saved to $MODEL_DIR/Elephants2x.pt"
 
 # 5. Set wallpaper
-pcmanfm --set-wallpaper "$BASE/backgrounds/CamBackground.png"
+#pcmanfm --set-wallpaper "$BASE/backgrounds/CamBackground.png"
 
-# 6. Fix gpiomem access for non-root (RPi camera RuntimeError workaround)
+# 6. gpiomem fix
 UDEV_RULE="/etc/udev/rules.d/99-com.rules"
 FIX_LINE='KERNEL=="gpiomem", OWNER="root", GROUP="dialout"'
 
