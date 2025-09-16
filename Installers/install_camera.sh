@@ -13,7 +13,7 @@ if [ ! -d "$BASE/venv" ]; then
   "$BASE/venv/bin/pip" install --no-cache-dir \
        ultralytics picamera2 opencv-python adafruit-circuitpython-rfm9x adafruit-blinka
 fi
-
+#Commented out boot-services, which run timers and call scripts in the background as soon as the pi is booted.
 # 2. copy systemd units
 #install -m 644 "$SRC/systemd/lora_cam_bridge.service" "$UNITDIR/"
 #install -m 644 "$SRC/systemd/status_ping.service"     "$UNITDIR/"
@@ -31,7 +31,7 @@ fi
 wget -q --show-progress https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11x.pt \
      -O "$MODEL_DIR/Elephants2x.pt"
 echo "✓ XLarge Model saved to $MODEL_DIR/Elephants2x.pt"
-
+#Doesn't work, not necessary.
 # 5. Set wallpaper
 #pcmanfm --set-wallpaper "$BASE/backgrounds/CamBackground.png"
 
